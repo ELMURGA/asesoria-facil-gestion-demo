@@ -1,0 +1,58 @@
+// Genera las capturas limpias (sin barra de demo) para el PDF ilustrativo.
+import { chromium } from "playwright-core";
+import path from "path";
+import { fileURLToPath } from "url";
+const HERE = path.dirname(fileURLToPath(import.meta.url));
+const OUT = path.join(HERE, "..", "pdf", "img");
+const BASE = "http://localhost:4195/";
+const b = await chromium.launch({ executablePath: process.env.CHROME || "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome", headless: true });
+const DEV = { phone: [390, 800], tablet: [820, 1060], desk: [1280, 780] };
+async function take(dev, name, hash, role, prep) {
+  const [w, h] = DEV[dev];
+  const ctx = await b.newContext({ viewport: { width: w, height: h }, deviceScaleFactor: 2 });
+  const p = await ctx.newPage();
+  await p.goto(BASE);
+  await p.evaluate(() => { localStorage.clear(); });
+  await p.reload();
+  await p.evaluate(([r]) => { window.AFG.store.setRole(r); window.AFG.store.setClient("c1"); }, [role]);
+  await p.goto(BASE + hash); await p.reload();
+  await p.addStyleTag({ content: ".demobar{display:none!important}.view>*{animation:none!important}" });
+  if (prep) await prep(p);
+  await p.waitForTimeout(600);
+  await p.screenshot({ path: `${OUT}/${dev}-${name}.png` });
+  await ctx.close();
+}
+const sign = async (p) => { await p.click('.rowi:has-text("Hoja de encargo") button:has-text("Firmar")'); await p.waitForSelector("dialog canvas"); const c = await p.locator("dialog canvas").boundingBox(); await p.mouse.move(c.x + 30, c.y + 70); await p.mouse.down(); await p.mouse.move(c.x + 110, c.y + 25, { steps: 8 }); await p.mouse.move(c.x + 170, c.y + 90, { steps: 8 }); await p.mouse.move(c.x + 240, c.y + 40, { steps: 8 }); await p.mouse.up(); await p.waitForTimeout(300); };
+const upl = async (p) => { await p.setInputFiles("#dz-file", { name: "factura-ejemplo-ficticia.pdf", mimeType: "application/pdf", buffer: Buffer.from("%PDF-1.4 demo") }); await p.waitForSelector("dialog[open]"); await p.click("#up-cat-btn"); await p.click('dialog.pick-sheet .opt[data-v="gastos"]'); await p.waitForTimeout(150); await p.click("#up-mon-btn"); await p.click('dialog.pick-sheet .opt[data-v="noviembre"]'); await p.waitForTimeout(150); };
+const doc = async (p) => { await p.click('.rowi:has-text("Facturas de gastos · noviembre") button:has-text("Detalle")'); await p.waitForSelector("dialog[open]"); };
+const rev = async (p) => { await p.click('.rowi:has-text("Facturas emitidas · octubre") button:has-text("Revisar")'); await p.waitForSelector("dialog[open]"); };
+const auto = async (p) => { await p.click('button:has-text("Ver ejemplo") >> nth=0'); await p.waitForSelector("dialog[open]"); };
+const more = async (p) => { await p.click('.tabbar button:has-text("Más")'); await p.waitForSelector("dialog[open]"); };
+
+await take("phone", "entrada", "#/", "visitor");
+await take("phone", "inicio", "#/cliente", "client");
+await take("phone", "subir", "#/cliente", "client", upl);
+await take("phone", "estado", "#/cliente/subir", "client", async (p) => { await p.evaluate(() => window.scrollTo(0, 560)); });
+await take("phone", "detalle", "#/cliente/subir", "client", doc);
+await take("phone", "impuestos", "#/cliente/impuestos", "client");
+await take("phone", "nominas", "#/cliente/nominas", "client");
+await take("phone", "mensajes", "#/cliente/mensajes/t1", "client");
+await take("phone", "plazos", "#/cliente/plazos", "client");
+await take("phone", "firmas", "#/cliente/firmas", "client", sign);
+await take("phone", "mas", "#/cliente", "client", more);
+await take("phone", "facturacion", "#/cliente/facturacion", "client");
+await take("phone", "asesor", "#/asesor", "advisor");
+await take("tablet", "inicio", "#/cliente", "client");
+await take("tablet", "panel", "#/asesor", "advisor");
+await take("desk", "inicio", "#/cliente", "client");
+await take("desk", "impuestos", "#/cliente/impuestos", "client");
+await take("desk", "mensajes", "#/cliente/mensajes/t1", "client");
+await take("desk", "plazos", "#/cliente/plazos", "client");
+await take("desk", "panel", "#/asesor", "advisor");
+await take("desk", "auto", "#/asesor", "advisor", auto);
+await take("desk", "ficha", "#/asesor/clientes/c1", "advisor");
+await take("desk", "revisar", "#/asesor", "advisor", rev);
+await take("desk", "marca", "#/asesor/ajustes", "advisor");
+await take("desk", "facturacion", "#/asesor/facturacion", "advisor");
+await b.close();
+console.log("ok");

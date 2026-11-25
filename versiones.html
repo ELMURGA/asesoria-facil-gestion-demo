@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Versiones por dispositivo · Asesoría Fácil Gestión (demo)</title>
+  <meta name="robots" content="noindex, nofollow">
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="css/styles.css">
+  <style>
+    body { align-items: center; }
+    .vbar { width: 100%; max-width: 70rem; padding: 1rem; display: flex; flex-wrap: wrap; gap: .8rem 1.2rem; align-items: center; justify-content: space-between; }
+    .vbar h1 { font-size: 1.2rem; }
+    .stage { width: 100%; flex: 1; display: grid; place-items: start center; padding: .5rem 1rem 2rem; overflow: auto; }
+    .dev { transform-origin: top center; border: 10px solid #1d1d1d; background: #000; box-shadow: 0 30px 80px rgba(0,0,0,.6); }
+    .dev iframe { border: 0; display: block; background: var(--bg); }
+    .dev.phone { border-radius: 42px; border-width: 12px; }
+    .dev.phone iframe { border-radius: 30px; }
+    .dev.tablet { border-radius: 28px; }
+    .dev.tablet iframe { border-radius: 16px; }
+    .dev.desktop { border-radius: 14px; border-width: 8px; border-bottom-width: 20px; }
+    .seg button { font: 600 .95rem var(--font-body); color: var(--txt); background: transparent; border: 0; padding: .55rem 1.1rem; min-height: 44px; cursor: pointer; }
+    .cap { color: var(--mut); font-size: .88rem; text-align: center; padding: 0 1rem 1rem; max-width: 46rem; }
+  </style>
+</head>
+<body>
+  <div class="vbar">
+    <h1>Una sola app, tres versiones</h1>
+    <div class="seg" role="group" aria-label="Elegir dispositivo">
+      <button type="button" data-d="phone" aria-pressed="true">Móvil</button>
+      <button type="button" data-d="tablet" aria-pressed="false">Tableta</button>
+      <button type="button" data-d="desktop" aria-pressed="false">Ordenador</button>
+    </div>
+    <a class="btn secondary sm" href="index.html">Abrir la demo a pantalla completa</a>
+  </div>
+  <p class="cap" id="cap"></p>
+  <div class="stage"><div class="dev phone" id="dev"><iframe id="fr" title="Demo en el dispositivo elegido" src="index.html#/cliente"></iframe></div></div>
+  <script>
+    const SIZES = { phone: [390, 780, "Móvil: barra inferior tipo app y botón central para subir facturas con la cámara."], tablet: [820, 1080, "Tableta: carril lateral de iconos, formularios y listas a dos columnas."], desktop: [1366, 820, "Ordenador: barra lateral con nombres, panel completo y tablas."] };
+    const dev = document.getElementById("dev"), fr = document.getElementById("fr"), cap = document.getElementById("cap");
+    function set(d) {
+      const [w, h, t] = SIZES[d];
+      document.querySelectorAll("[data-d]").forEach((b) => b.setAttribute("aria-pressed", b.dataset.d === d));
+      dev.className = "dev " + d; fr.width = w; fr.height = h; cap.textContent = t;
+      const avail = Math.min(window.innerWidth - 40, 1500), k = Math.min(1, avail / (w + 24), (window.innerHeight - 140) / (h + 40));
+      dev.style.transform = `scale(${k})`; dev.style.marginBottom = `${-(h + 40) * (1 - k)}px`;
+    }
+    document.querySelectorAll("[data-d]").forEach((b) => b.addEventListener("click", () => set(b.dataset.d)));
+    window.addEventListener("resize", () => set(document.querySelector("[data-d][aria-pressed=true]").dataset.d));
+    const q = new URLSearchParams(location.search); if (q.get("d")) { if (q.get("r")) fr.src = "index.html#/" + q.get("r"); set(q.get("d")); } else set("phone");
+  </script>
+</body>
+</html>

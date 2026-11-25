@@ -1,0 +1,345 @@
+{
+  "fecha": "2026-11-25T00:19:48.787Z",
+  "resultados": [
+    {
+      "name": "primera pantalla = entrada de app (sin portada web)",
+      "pass": true,
+      "extra": ""
+    },
+    {
+      "name": "opciones claras: cliente y asesor",
+      "pass": true,
+      "extra": ""
+    },
+    {
+      "name": "pie «Desarrollado por Dazenty» enlazado",
+      "pass": true,
+      "extra": ""
+    },
+    {
+      "name": "DEMO visible",
+      "pass": true,
+      "extra": ""
+    },
+    {
+      "name": "colores base de la agencia (fondo #050505)",
+      "pass": true,
+      "extra": "rgb(5, 5, 5)"
+    },
+    {
+      "name": "acento coral de la agencia (#d97762)",
+      "pass": true,
+      "extra": "#d97762"
+    },
+    {
+      "name": "entrada ordenador: pantalla dividida (marca a la izquierda, acceso a la derecha) con vista previa",
+      "pass": true,
+      "extra": "tarjeta en x=800, marca hasta x=736"
+    },
+    {
+      "name": "entrada ordenador: cabe en la pantalla sin scroll",
+      "pass": true,
+      "extra": "860 > 860"
+    },
+    {
+      "name": "entrada tableta: tarjeta centrada y sin vista previa",
+      "pass": true,
+      "extra": "izq 82 / der 82"
+    },
+    {
+      "name": "entrada móvil: tarjeta centrada y firma de Dazenty al final",
+      "pass": true,
+      "extra": "izq 35 / der 35"
+    },
+    {
+      "name": "inicio del cliente: pregunta respondida (qué falta), zona de subida, rejilla del trimestre, lo del despacho y próximo plazo",
+      "pass": true,
+      "extra": ""
+    },
+    {
+      "name": "inicio sin saludo de cabecera ni indicadores en tarjetas",
+      "pass": true,
+      "extra": ""
+    },
+    {
+      "name": "rejilla del trimestre: 9 casillas (3 tipos × 3 meses)",
+      "pass": true,
+      "extra": ""
+    },
+    {
+      "name": "c1 no ve datos de otros ni notas internas",
+      "pass": true,
+      "extra": ""
+    },
+    {
+      "name": "menú del PDF presente",
+      "pass": true,
+      "extra": ""
+    },
+    {
+      "name": "el archivo elegido llega al diálogo",
+      "pass": true,
+      "extra": ""
+    },
+    {
+      "name": "documento nuevo recibido",
+      "pass": true,
+      "extra": ""
+    },
+    {
+      "name": "error por formato no admitido",
+      "pass": true,
+      "extra": ""
+    },
+    {
+      "name": "Esc cierra el diálogo",
+      "pass": true,
+      "extra": ""
+    },
+    {
+      "name": "error si no hay archivo",
+      "pass": true,
+      "extra": ""
+    },
+    {
+      "name": "el extracto pasa a Recibido",
+      "pass": true,
+      "extra": ""
+    },
+    {
+      "name": "filtro por estado",
+      "pass": true,
+      "extra": ""
+    },
+    {
+      "name": "panel como el PDF (indicadores, clientes con rejilla, automatizaciones)",
+      "pass": true,
+      "extra": ""
+    },
+    {
+      "name": "ejemplo de recordatorios marcado como simulación",
+      "pass": true,
+      "extra": ""
+    },
+    {
+      "name": "el documento aparece en «Por hacer hoy»",
+      "pass": true,
+      "extra": ""
+    },
+    {
+      "name": "aclaración deja el documento en Requiere revisión",
+      "pass": true,
+      "extra": ""
+    },
+    {
+      "name": "nota interna guardada",
+      "pass": true,
+      "extra": ""
+    },
+    {
+      "name": "modelo publicado",
+      "pass": true,
+      "extra": ""
+    },
+    {
+      "name": "firma solicitada",
+      "pass": true,
+      "extra": ""
+    },
+    {
+      "name": "el cliente ve la aclaración vinculada",
+      "pass": true,
+      "extra": ""
+    },
+    {
+      "name": "hilo vinculado a documento",
+      "pass": true,
+      "extra": ""
+    },
+    {
+      "name": "«Mis impuestos» muestra el modelo nuevo con etiqueta Nuevo",
+      "pass": true,
+      "extra": ""
+    },
+    {
+      "name": "descarga ficticia identificada como ejemplo",
+      "pass": true,
+      "extra": ""
+    },
+    {
+      "name": "cliente no ve la nota interna",
+      "pass": true,
+      "extra": ""
+    },
+    {
+      "name": "firma pendiente visible con aviso de demo",
+      "pass": true,
+      "extra": ""
+    },
+    {
+      "name": "no firma sin dibujar",
+      "pass": true,
+      "extra": ""
+    },
+    {
+      "name": "firma registrada",
+      "pass": true,
+      "extra": ""
+    },
+    {
+      "name": "plazos definidos por el despacho, sin calendario fiscal",
+      "pass": true,
+      "extra": ""
+    },
+    {
+      "name": "c3 solo ve lo suyo",
+      "pass": true,
+      "extra": ""
+    },
+    {
+      "name": "c3 no abre el hilo de c1 por URL",
+      "pass": true,
+      "extra": ""
+    },
+    {
+      "name": "facturación marca SIMULACIÓN",
+      "pass": true,
+      "extra": ""
+    },
+    {
+      "name": "sin «aceptada por AEAT», QR ni homologación",
+      "pass": true,
+      "extra": ""
+    },
+    {
+      "name": "importe no válido bloquea el envío",
+      "pass": true,
+      "extra": ""
+    },
+    {
+      "name": "datos de factura recibidos (simulado)",
+      "pass": true,
+      "extra": ""
+    },
+    {
+      "name": "avanza a revisión del asesor",
+      "pass": true,
+      "extra": ""
+    },
+    {
+      "name": "cliente invitado y archivado",
+      "pass": true,
+      "extra": ""
+    },
+    {
+      "name": "búsqueda por documento",
+      "pass": true,
+      "extra": ""
+    },
+    {
+      "name": "«Tu marca»: cambiar el color cambia toda la app",
+      "pass": true,
+      "extra": "#7db4ff"
+    },
+    {
+      "name": "el asesor añade un plazo",
+      "pass": true,
+      "extra": ""
+    },
+    {
+      "name": "trazabilidad registrada",
+      "pass": true,
+      "extra": ""
+    },
+    {
+      "name": "el reinicio restaura los datos",
+      "pass": true,
+      "extra": ""
+    },
+    {
+      "name": "el reinicio borra notas, plazos y clientes nuevos",
+      "pass": true,
+      "extra": ""
+    },
+    {
+      "name": "enlace de salto visible con foco",
+      "pass": true,
+      "extra": ""
+    },
+    {
+      "name": "Tab llega a un control con foco visible",
+      "pass": true,
+      "extra": ""
+    },
+    {
+      "name": "ningún desplegable nativo visible (todos usan el selector propio)",
+      "pass": true,
+      "extra": "0 visibles"
+    },
+    {
+      "name": "móvil: la hoja del selector cabe en pantalla, opciones grandes y con foco",
+      "pass": true,
+      "extra": "{\"within\":true,\"minH\":65.5,\"n\":5,\"focus\":true}"
+    },
+    {
+      "name": "teclado: flechas y Enter eligen opción",
+      "pass": true,
+      "extra": ""
+    },
+    {
+      "name": "Esc cierra el selector sin cambiar nada",
+      "pass": true,
+      "extra": ""
+    },
+    {
+      "name": "sin desbordamiento horizontal · ordenador · 26 rutas",
+      "pass": true,
+      "extra": ""
+    },
+    {
+      "name": "versión ordenador: barra lateral con nombres",
+      "pass": true,
+      "extra": "240px"
+    },
+    {
+      "name": "sin desbordamiento horizontal · tableta · 26 rutas",
+      "pass": true,
+      "extra": ""
+    },
+    {
+      "name": "versión tableta: carril de iconos y sin barra inferior",
+      "pass": true,
+      "extra": "88px"
+    },
+    {
+      "name": "sin desbordamiento horizontal · movil · 26 rutas",
+      "pass": true,
+      "extra": ""
+    },
+    {
+      "name": "versión móvil: barra inferior y sin carril",
+      "pass": true,
+      "extra": ""
+    },
+    {
+      "name": "móvil: sin controles táctiles diminutos",
+      "pass": true,
+      "extra": "0 pequeños"
+    },
+    {
+      "name": "móvil: «Más» abre una hoja con el resto de secciones",
+      "pass": true,
+      "extra": ""
+    },
+    {
+      "name": "página de versiones con móvil/tableta/ordenador",
+      "pass": true,
+      "extra": ""
+    },
+    {
+      "name": "sin errores de consola",
+      "pass": true,
+      "extra": ""
+    }
+  ]
+}

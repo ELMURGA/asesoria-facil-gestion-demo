@@ -1,0 +1,268 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<title>Demo del portal · ASESORÍA FÁCIL GESTIÓN, SL · Dazenty</title>
+<style>
+@font-face{font-family:"SG";src:url(../fonts/space-grotesk-latin-v22.woff2) format("woff2");font-weight:300 700}
+@font-face{font-family:"In";src:url(../fonts/inter-latin-v20.woff2) format("woff2");font-weight:100 900}
+@page{size:A4;margin:0}
+*{box-sizing:border-box;margin:0;padding:0}
+:root{--bg:#050505;--card:#121212;--card2:#1a1a1a;--line:rgba(255,255,255,.12);--txt:#f2f2f2;--mut:#a8a8a8;--acc:#d97762;--acc2:#e8957f;--paper:#f6f3ef;--ink:#141414;--ok:#5fb58a;--warn:#e0b04f;--info:#7db4ff;--bad:#ff8f8f}
+html,body{background:var(--bg);color:var(--txt);font-family:"In",sans-serif;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+.page{width:210mm;height:297mm;padding:16mm 16mm 18mm;position:relative;overflow:hidden;break-after:page;page-break-after:always}
+.page:last-child{break-after:auto;page-break-after:auto}
+.light{background:var(--paper);color:var(--ink)}
+h1,h2,h3{font-family:"SG",sans-serif;letter-spacing:-.02em;font-weight:600}
+h1{font-size:36px;line-height:1.05}
+h1 em,h2 em{font-style:normal;color:var(--acc)}
+h2{font-size:25px;line-height:1.1;margin-bottom:4mm}
+h3{font-size:13.5px;margin-bottom:1.6mm}
+p{font-size:11.5px;line-height:1.5}
+.eyebrow{font-family:"SG";font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--acc);margin-bottom:4mm}
+.mut{color:var(--mut)} .light .mut{color:#5d5a56}
+.top{display:flex;justify-content:space-between;align-items:center;margin-bottom:7mm}
+.top img{height:15mm;width:auto}
+.top span{font-size:9.5px;color:var(--mut);letter-spacing:.1em;text-transform:uppercase}
+.light .top span{color:#7a766f}
+.foot{position:absolute;left:16mm;right:16mm;bottom:7mm;display:flex;justify-content:space-between;font-size:9px;color:var(--mut)}
+.light .foot{color:#7a766f}
+.pills{display:flex;gap:2mm;flex-wrap:wrap;margin-top:5mm}
+.pill{font-size:10px;border:.3mm solid var(--line);border-radius:20mm;padding:1.4mm 3.2mm;color:#ddd}
+.box{background:var(--card);border:.3mm solid var(--line);border-radius:3.5mm;padding:5mm}
+.box.a{border-color:rgba(217,119,98,.55)}
+.light .box{background:#fff;border-color:#e6e0d8}
+.box p{font-size:10.5px;color:#c9c9c9} .light .box p{color:#4a4742}
+.num{font-family:"SG";font-size:9.5px;color:var(--acc);font-weight:600;letter-spacing:.12em;margin-bottom:1.6mm}
+.tag{font-size:8.5px;padding:.6mm 2.2mm;border-radius:5mm;font-weight:600;white-space:nowrap}
+.t-pend{background:rgba(224,176,79,.18);color:var(--warn)} .t-recv{background:rgba(125,180,255,.18);color:var(--info)} .t-rev{background:rgba(255,110,110,.18);color:var(--bad)} .t-ok{background:rgba(95,181,138,.18);color:var(--ok)}
+.light .t-pend{color:#8a6414}.light .t-recv{color:#245aa5}.light .t-rev{color:#a32b2b}.light .t-ok{color:#2f7d56}
+/* dispositivos */
+.ph{border:2mm solid #1f1f1f;border-radius:6.5mm;overflow:hidden;background:#000;box-shadow:0 14px 34px rgba(217,119,98,.18)}
+.ph img,.tb img,.dk img{width:100%;display:block}
+.tb{border:2.2mm solid #1f1f1f;border-radius:4mm;overflow:hidden;background:#000;box-shadow:0 14px 34px rgba(217,119,98,.18)}
+.dk{border:1.6mm solid #1f1f1f;border-bottom-width:3.2mm;border-radius:2.6mm;overflow:hidden;background:#000;box-shadow:0 14px 34px rgba(217,119,98,.18)}
+.light .ph,.light .tb,.light .dk{box-shadow:0 10px 26px rgba(0,0,0,.18)}
+.cap{font-size:9.5px;color:var(--mut);margin-top:2mm;line-height:1.4} .light .cap{color:#5d5a56}
+.cols{display:grid;gap:5mm}
+.c2{grid-template-columns:1fr 1fr}.c3{grid-template-columns:1fr 1fr 1fr}
+.ul{list-style:none;margin-top:2mm}
+.ul li{font-size:10.8px;line-height:1.45;padding:1.1mm 0 1.1mm 4.6mm;position:relative}
+.ul li:before{content:"";position:absolute;left:0;top:2.6mm;width:1.8mm;height:1.8mm;border-radius:50%;background:var(--acc)}
+.sim{border:.4mm dashed var(--warn);background:rgba(224,176,79,.1);color:var(--warn);padding:2.6mm 3.6mm;border-radius:2.6mm;font-size:10.5px;font-weight:600}
+.light .sim{color:#7a5300;border-color:#b08a00;background:rgba(224,176,79,.2)}
+table.t{width:100%;border-collapse:collapse;font-size:10px}
+table.t th{text-align:left;color:var(--acc);font-family:"SG";font-weight:600;padding:1.6mm 2mm;border-bottom:.3mm solid var(--line)}
+table.t td{padding:2mm;border-bottom:.3mm solid var(--line);vertical-align:top;line-height:1.4}
+.light table.t td,.light table.t th{border-color:#e6e0d8}
+.step{border-top:.6mm solid var(--acc);padding-top:2.6mm;font-size:10.3px;line-height:1.45}
+.step b{display:block;font-family:"SG";font-size:11.5px;margin-bottom:.8mm}
+.cta{background:var(--paper);color:var(--ink);border-radius:4mm;padding:6mm 7mm;display:grid;grid-template-columns:1fr auto;gap:6mm;align-items:center}
+.light .cta{background:#141414;color:#eee}
+.pillbtn{background:var(--acc);color:#140a07;font-family:"SG";font-weight:600;padding:3mm 5mm;border-radius:20mm;font-size:11.5px;display:inline-block}
+</style>
+</head>
+<body>
+
+<!-- 1 · PORTADA -->
+<section class="page">
+  <div class="top"><img src="../img/dazenty-blanco.png" alt="Dazenty"><span>Demostración ilustrativa · noviembre 2026</span></div>
+  <div class="eyebrow">Portal de clientes para ASESORÍA FÁCIL GESTIÓN, SL</div>
+  <h1>Tus clientes suben sus facturas con una foto. <em>Tú compruebas, respondes y publicas.</em></h1>
+  <p class="mut" style="margin-top:5mm;font-size:13px;max-width:150mm">Un solo sitio para aportar documentación, hablar con el asesor, descargar modelos y nóminas y ver los plazos. Funciona en el móvil, la tableta y el ordenador, sin instalar nada.</p>
+  <div class="pills"><span class="pill">Móvil, tableta y ordenador</span><span class="pill">Sin descargar ninguna app</span><span class="pill">Pensado para un asesor que trabaja solo</span><span class="pill">Datos de ejemplo</span></div>
+  <div style="display:grid;grid-template-columns:1.9fr .78fr;gap:7mm;align-items:end;margin-top:10mm">
+    <div class="dk"><img src="img/desk-inicio.png" alt="Versión ordenador"></div>
+    <div class="ph"><img src="img/phone-inicio.png" alt="Versión móvil"></div>
+  </div>
+  <div class="cols c3" style="margin-top:9mm"><div class="box a"><div class="num">CLIENTE</div><p>Sube facturas, ve el estado de cada documento, descarga modelos y nóminas, firma y habla con su asesor.</p></div><div class="box"><div class="num">ASESOR</div><p>Panel con lo pendiente, revisión de entregas, publicaciones, avisos y ficha de cada cliente.</p></div><div class="box"><div class="num">FACTURACIÓN</div><p>Recorrido simulado de un servicio por definir con el despacho. Sin conexiones reales.</p></div></div>
+  <p class="cap" style="margin-top:4mm">Capturas de la demostración con datos ficticios. Los colores son los de la agencia hasta definir los de vuestra marca.</p>
+  <div class="foot"><span>Agencia Dazenty · dazenty.com</span><span>01</span></div>
+</section>
+
+<!-- 2 · TRES VERSIONES -->
+<section class="page light">
+  <div class="top"><img src="../img/dazenty-negro.png" alt="Dazenty"><span>Cualquier persona, cualquier dispositivo</span></div>
+  <div class="eyebrow">Una sola app, tres versiones</div>
+  <h2>La misma app se adapta a cada pantalla.</h2>
+  <p class="mut" style="max-width:160mm">No hay que instalar nada: se abre desde el navegador, con la misma dirección en todos los dispositivos. Lo que cambia es la forma de moverse por ella.</p>
+  <div style="display:grid;grid-template-columns:50mm 82mm 1fr;gap:6mm;margin-top:6mm;align-items:start">
+    <div><div class="ph"><img src="img/phone-subir.png" alt="Móvil"></div></div>
+    <div><div class="tb"><img src="img/tablet-inicio.png" alt="Tableta"></div></div>
+    <div class="stack">
+      <h3>Móvil · como una app</h3><p class="cap" style="margin-bottom:4mm">Barra inferior con el botón central para subir facturas. «Hacer foto» abre la cámara. Hojas inferiores y botones grandes para el dedo.</p>
+      <h3>Tableta · carril de iconos</h3><p class="cap">Menú lateral compacto y más espacio para listas y formularios.</p>
+    </div>
+  </div>
+  <div style="display:grid;grid-template-columns:112mm 1fr;gap:6mm;margin-top:6mm;align-items:center">
+    <div class="dk"><img src="img/desk-impuestos.png" alt="Ordenador"></div>
+    <div><h3>Ordenador · menú completo</h3><p class="cap">Barra lateral con todas las secciones, tablas amplias y el panel completo para el despacho.</p></div>
+  </div>
+  <div class="box" style="margin-top:6mm"><p><b>Importante:</b> una web adaptable a todos los dispositivos no es lo mismo que una app descargable desde las tiendas. La app de tienda (y su publicación) es una partida aparte y se puede dejar para más adelante.</p></div>
+  <div class="foot"><span>Agencia Dazenty · dazenty.com</span><span>02</span></div>
+</section>
+
+<!-- 3 · ENTRADA Y SUBIDA -->
+<section class="page">
+  <div class="top"><img src="../img/dazenty-blanco.png" alt="Dazenty"><span>Lo que ve tu cliente · 1</span></div>
+  <div class="eyebrow">De la entrada a la primera factura</div>
+  <h2>Entrar, hacer una foto y listo.</h2>
+  <div class="cols c3" style="margin-top:5mm">
+    <div><div class="ph"><img src="img/phone-entrada.png" alt="Entrada"></div><h3 style="margin-top:3mm">1 · Entrada</h3><p class="cap">Una pantalla sencilla, sin web alrededor. En la versión real, cada cliente entraría con su correo. En la demo se elige un cliente de ejemplo, sin contraseñas.</p></div>
+    <div><div class="ph"><img src="img/phone-inicio.png" alt="Inicio"></div><h3 style="margin-top:3mm">2 · Inicio</h3><p class="cap">El título es el trimestre y debajo se dice qué falta. Zona para arrastrar o fotografiar facturas, lista «Por hacer», la rejilla «Mi trimestre» y lo que publica el despacho.</p></div>
+    <div><div class="ph"><img src="img/phone-subir.png" alt="Subir"></div><h3 style="margin-top:3mm">3 · Subir</h3><p class="cap">Elige tipo (emitidas, gastos, extractos u otros), trimestre y mes. Acepta PDF, foto o Excel, hasta 10 MB.</p></div>
+  </div>
+  <div class="cols c2" style="margin-top:6mm">
+    <div class="box a"><div class="num">LO QUE HACE LA DEMO</div><ul class="ul"><li>Valida el tipo y el tamaño del archivo y avisa si no vale.</li><li>Ordena el documento por trimestre, mes y tipo.</li><li>Cambia su estado a «Recibido» y se lo muestra al asesor.</li></ul></div>
+    <div class="box"><div class="num">LO QUE ES SIMULADO</div><ul class="ul"><li>Los archivos no se guardan: solo su nombre y tamaño.</li><li>No hay contraseñas ni envío de correos.</li><li>En producción se añadiría acceso real y almacenamiento privado.</li></ul></div>
+  </div>
+  <div class="foot"><span>Agencia Dazenty · dazenty.com</span><span>03</span></div>
+</section>
+
+<!-- 4 · SECCIONES DEL CLIENTE -->
+<section class="page light">
+  <div class="top"><img src="../img/dazenty-negro.png" alt="Dazenty"><span>Lo que ve tu cliente · 2</span></div>
+  <div class="eyebrow">Todo en un único sitio</div>
+  <h2>Seis cosas que tu cliente ya no te pide por WhatsApp.</h2>
+  <div class="cols c3" style="margin-top:4mm;grid-template-columns:1fr 1fr 1fr 1fr">
+    <div><div class="ph"><img src="img/phone-impuestos.png" alt="Impuestos"></div><p class="cap"><b>Mis impuestos</b></p></div>
+    <div><div class="ph"><img src="img/phone-nominas.png" alt="Nóminas"></div><p class="cap"><b>Nóminas</b></p></div>
+    <div><div class="ph"><img src="img/phone-mensajes.png" alt="Mensajes"></div><p class="cap"><b>Mensajes</b></p></div>
+    <div><div class="ph"><img src="img/phone-plazos.png" alt="Plazos"></div><p class="cap"><b>Plazos y avisos</b></p></div>
+  </div>
+  <div class="cols c2" style="margin-top:5mm">
+    <div class="box"><div class="num">MIS IMPUESTOS</div><h3>Sus modelos, siempre a mano</h3><p>El asesor presenta y publica; el cliente descarga cuando quiere, ordenado por trimestre. El portal no calcula impuestos.</p></div>
+    <div class="box"><div class="num">NÓMINAS Y LABORAL</div><h3>Nóminas, TC, altas y bajas</h3><p>Para clientes con empleados: cada documento en su carpeta y con filtro por tipo.</p></div>
+    <div class="box"><div class="num">MENSAJES</div><h3>Consultas con contexto</h3><p>Cada duda queda ligada al cliente y, si procede, a un documento. Un indicador dice si «te toca responder» o si se espera al despacho.</p></div>
+    <div class="box"><div class="num">PLAZOS Y AVISOS</div><h3>Qué falta y cuándo</h3><p>Los plazos los introduce el asesor. El cliente elige cuántos días antes quiere el aviso y por qué canal.</p></div>
+    <div class="box"><div class="num">DOCUMENTOS</div><h3>Contratos y documentación general</h3><p>Todo lo que el despacho publique para él, en un sitio único y siempre disponible.</p></div>
+    <div class="box"><div class="num">FIRMAS</div><h3>Firmar desde el móvil</h3><p>Hojas de encargo, autorizaciones y conformidad de declaraciones. En la demo es una firma dibujada de ejemplo, sin validez legal.</p></div>
+  </div>
+  <div class="foot"><span>Agencia Dazenty · dazenty.com</span><span>04</span></div>
+</section>
+
+<!-- 5 · ESTADOS -->
+<section class="page">
+  <div class="top"><img src="../img/dazenty-blanco.png" alt="Dazenty"><span>Estados y conversaciones</span></div>
+  <div class="eyebrow">Siempre se sabe en qué punto está cada cosa</div>
+  <h2>Cuatro estados, sin dudas.</h2>
+  <div style="display:grid;grid-template-columns:1fr .62fr;gap:7mm;align-items:start;margin-top:3mm">
+    <div class="stack">
+      <div class="box" style="margin-bottom:3.5mm"><span class="tag t-pend">Pendiente de aportar</span><p style="margin-top:2mm">El despacho espera ese documento. El cliente ve un botón «Aportar».</p></div>
+      <div class="box" style="margin-bottom:3.5mm"><span class="tag t-recv">Recibido</span><p style="margin-top:2mm">El cliente ya lo subió. El asesor lo ve en «Para revisar ahora».</p></div>
+      <div class="box" style="margin-bottom:3.5mm"><span class="tag t-rev">Requiere revisión</span><p style="margin-top:2mm">El asesor pide una aclaración o un archivo mejor (por ejemplo, una foto borrosa). El cliente ve el mensaje y puede «Sustituir» el archivo.</p></div>
+      <div class="box" style="margin-bottom:3.5mm"><span class="tag t-ok">Revisado</span><p style="margin-top:2mm">El asesor lo ha comprobado.</p></div>
+      <div class="box" style="margin-bottom:3.5mm"><div class="num">MI TRIMESTRE</div><p>Una rejilla de 3 tipos × 3 meses: de un vistazo se ve qué está revisado, qué falta y qué te ha devuelto el despacho. Cada casilla se pulsa para abrir o aportar el documento.</p></div>
+      <div class="box a"><div class="num">CONVERSACIONES VINCULADAS</div><p>Al pedir una aclaración sobre un documento se abre una conversación enlazada a él: el cliente la ve en «Mensajes» y desde el documento. Todo queda en el historial.</p></div>
+    </div>
+    <div><div class="ph"><img src="img/phone-detalle.png" alt="Detalle de documento"></div><p class="cap">Detalle de un documento: estado, mensaje del despacho, historial y acciones.</p></div>
+  </div>
+  <div class="foot"><span>Agencia Dazenty · dazenty.com</span><span>05</span></div>
+</section>
+
+<!-- 6 · PANEL -->
+<section class="page light">
+  <div class="top"><img src="../img/dazenty-negro.png" alt="Dazenty"><span>Lo que ve el despacho</span></div>
+  <div class="eyebrow">Panel del asesor</div>
+  <h2>Sabes quién ha entregado, quién no y qué toca hoy.</h2>
+  <div class="dk" style="margin-top:3mm"><img src="img/desk-panel.png" alt="Panel"></div>
+  <p class="cap">Panel con datos de ejemplo. Un asesor que trabaja solo: sin módulos de equipo.</p>
+  <div class="cols c2" style="margin-top:5mm;grid-template-columns:1fr .9fr">
+    <div class="stack">
+      <div class="box"><h3>Lo que puede hacer el asesor</h3><ul class="ul"><li>Ver clientes activos, documentación completa, pendientes y consultas abiertas.</li><li>Revisar una entrega, marcarla como revisada o pedir una aclaración.</li><li>Pedir información que falta (tipo, trimestre y mes).</li><li>Publicar modelos, nóminas, contratos y documentos.</li><li>Invitar clientes poco a poco, archivarlos y filtrar por trimestre.</li><li>Buscar por cliente o documento y ver el registro de acciones.</li></ul></div>
+    </div>
+    <div class="ph" style="border-radius:3mm"><img src="img/desk-ficha.png" alt="Ficha"></div>
+  </div>
+  <p class="cap">Ficha de cliente: documentación, mensajes, publicar, firmas, facturación y <b>notas internas separadas de lo que ve el cliente</b>.</p>
+  <div class="foot"><span>Agencia Dazenty · dazenty.com</span><span>06</span></div>
+</section>
+
+<!-- 7 · AUTOMATIZACIONES Y MARCA -->
+<section class="page">
+  <div class="top"><img src="../img/dazenty-blanco.png" alt="Dazenty"><span>Avisos y marca</span></div>
+  <div class="eyebrow">Menos trabajo de administración</div>
+  <h2>Tres automatizaciones y vuestra marca.</h2>
+  <div class="dk" style="margin-top:3mm;width:78%"><img src="img/desk-auto.png" alt="Automatizaciones"></div>
+  <p class="cap">Ejemplo de recordatorios. En la demo ninguno se envía.</p>
+  <div class="cols c3" style="margin-top:4mm">
+    <div class="box a"><div class="num">RECORDATORIOS</div><h3>Por plazo</h3><p>Avisa a quien no ha entregado, 10, 5 y 2 días antes (configurable). Correo en producción; WhatsApp o SMS requieren integración, consentimiento y coste por mensaje.</p></div>
+    <div class="box"><div class="num">AVISO AL ASESOR</div><h3>Al subir un documento</h3><p>Cuando un cliente sube algo, el asesor lo sabe al momento.</p></div>
+    <div class="box"><div class="num">INFORME SEMANAL</div><h3>Cada lunes</h3><p>Resumen de lo pendiente de cada cliente y de los mensajes sin responder.</p></div>
+  </div>
+  <div style="display:grid;grid-template-columns:1.1fr 1fr;gap:6mm;margin-top:4mm;align-items:center">
+    <div class="dk"><img src="img/desk-marca.png" alt="Tu marca"></div>
+    <div class="box"><div class="num">TU MARCA</div><p>De momento se usan los colores de la agencia. El asesor puede cambiar el color y se ve al instante. El logo y el dominio propios están <b>pendientes de definir</b> con vosotros.</p></div>
+  </div>
+  <div class="foot"><span>Agencia Dazenty · dazenty.com</span><span>07</span></div>
+</section>
+
+<!-- 8 · FACTURACIÓN -->
+<section class="page light">
+  <div class="top"><img src="../img/dazenty-negro.png" alt="Dazenty"><span>Servicio de facturación</span></div>
+  <div class="eyebrow">Una propuesta por definir con el despacho</div>
+  <h2>El punto fuerte que queréis ofrecer, bien planteado antes de prometer nada.</h2>
+  <div class="sim">SIMULACIÓN · La pantalla de facturación de la demo es una maqueta con datos ficticios. No hay herramienta de facturación conectada ni conexión con la Agencia Tributaria.</div>
+  <div class="cols c2" style="margin-top:4mm;grid-template-columns:1fr .9fr;align-items:start">
+    <div class="dk"><img src="img/desk-facturacion.png" alt="Facturación (simulación)"></div>
+    <div class="stack">
+      <div class="box"><h3>Recorrido propuesto</h3><ul class="ul"><li><b>Datos recibidos:</b> el cliente indica lo que quiere facturar.</li><li><b>Pendiente de revisión del asesor:</b> una persona comprueba los datos.</li><li><b>Resuelto en la herramienta de facturación:</b> el paso real ocurriría en la herramienta elegida.</li></ul></div>
+    </div>
+  </div>
+  <h3 style="margin-top:5mm">Cuatro procesos que no hay que confundir</h3>
+  <div class="cols" style="grid-template-columns:repeat(4,1fr);margin-top:2mm">
+    <div class="box"><h3>Recibir un documento</h3><p>Un PDF, foto o Excel que ya existe. Lo cubre el portal base.</p></div>
+    <div class="box"><h3>Emitir una factura</h3><p>Requiere una herramienta de facturación.</p></div>
+    <div class="box"><h3>Calcular impuestos</h3><p>Trabajo del despacho; el portal no lo calcula.</p></div>
+    <div class="box"><h3>Remitir registros</h3><p>Requiere un sistema informático con requisitos propios.</p></div>
+  </div>
+  <div class="box a" style="margin-top:4mm"><div class="num">NECESITAMOS SABER</div><ul class="ul"><li>Quién emite las facturas (el cliente o el despacho) y con qué programa.</li><li>Qué datos llegarían y quién valida cada paso.</li><li>Si hoy usáis una herramienta con API y documentación.</li></ul><p style="margin-top:2mm">Un PDF, una foto o un Excel cualquiera no se convierten por sí solos en un registro válido. Con esas respuestas se comparan las opciones (mantener vuestra herramienta, un proveedor o un desarrollo específico) y se revisa la documentación oficial vigente antes de decidir.</p></div>
+  <div class="foot"><span>Agencia Dazenty · dazenty.com</span><span>08</span></div>
+</section>
+
+<!-- 9 · DEMO VS REAL -->
+<section class="page">
+  <div class="top"><img src="../img/dazenty-blanco.png" alt="Dazenty"><span>Qué es demo y qué sería real</span></div>
+  <div class="eyebrow">Transparencia total</div>
+  <h2>Lo que veis es una demostración. Así quedaría en real.</h2>
+  <table class="t" style="margin-top:2mm">
+    <tr><th style="width:22%">Tema</th><th style="width:36%">En la demo de hoy</th><th>En la versión real (por construir)</th></tr>
+    <tr><td>Acceso</td><td>Se elige un cliente de ejemplo. Sin contraseñas.</td><td>Entrada con cuenta propia de cada cliente y acceso protegido para el asesor.</td></tr>
+    <tr><td>Separación entre clientes</td><td>Solo en pantalla.</td><td>Permisos reales por cliente, comprobados en el servidor.</td></tr>
+    <tr><td>Archivos</td><td>No se guardan; solo nombre y tamaño.</td><td>Almacenamiento privado, copias de seguridad y recuperación.</td></tr>
+    <tr><td>Datos</td><td>En este navegador. No se sincronizan entre dispositivos.</td><td>Base de datos común: el cliente sube desde el móvil y el asesor lo ve al instante.</td></tr>
+    <tr><td>Avisos</td><td>Simulados; no se envía nada.</td><td>Correo y, si se acuerda, otros canales con consentimiento y coste aparte.</td></tr>
+    <tr><td>Firmas</td><td>Dibujo de ejemplo, sin validez legal.</td><td>Solución de firma adecuada, a elegir.</td></tr>
+    <tr><td>Registro de actividad</td><td>Simulado.</td><td>Registro protegido con fecha fiable.</td></tr>
+    <tr><td>Facturación</td><td>Maqueta con estados manuales.</td><td>Según la herramienta y el sistema que se elijan (Fase 2).</td></tr>
+    <tr><td>Marca</td><td>Colores de la agencia.</td><td>Vuestro logo, colores y dominio.</td></tr>
+    <tr><td>Datos legales</td><td>Pendientes de confirmar.</td><td>Aviso legal y política de privacidad con los datos reales de la sociedad.</td></tr>
+  </table>
+  <div class="box" style="margin-top:5mm"><p>Nada de esto está implementado todavía salvo lo que se ve en la demo. Cualquier cifra de rendimiento, ahorro o cumplimiento sería una promesa que hoy no podemos hacer.</p></div>
+  <div class="foot"><span>Agencia Dazenty · dazenty.com</span><span>09</span></div>
+</section>
+
+<!-- 10 · FASES -->
+<section class="page light">
+  <div class="top"><img src="../img/dazenty-negro.png" alt="Dazenty"><span>Cómo seguimos</span></div>
+  <div class="eyebrow">Paso a paso, sin prisas</div>
+  <h2>Empezar poco a poco, igual que vuestros clientes.</h2>
+  <div class="cols" style="grid-template-columns:repeat(4,1fr);margin-top:3mm">
+    <div class="step"><b>0 · Validar</b>Revisáis esta demo y decidimos identidad y forma de trabajar la facturación.</div>
+    <div class="step"><b>1 · Portal base</b>Con vuestra marca: subida de documentos, mensajes, publicaciones, plazos y panel.</div>
+    <div class="step"><b>2 · Facturación</b>Se estudia e integra según la herramienta elegida y sus requisitos.</div>
+    <div class="step"><b>3 · Opcional</b>App de tienda, más automatizaciones y visibilidad. Cada partida por separado.</div>
+  </div>
+  <h3 style="margin-top:7mm">Para presupuestar necesitamos que nos contéis</h3>
+  <div class="cols c2" style="margin-top:2mm">
+    <div class="box"><ul class="ul"><li>¿Con qué herramienta emitís y gestionáis facturas hoy? ¿Las prepara el despacho o cada cliente?</li><li>¿Qué servicios incluiréis desde el inicio y qué tipo de cliente atenderéis primero?</li><li>¿Cuántos clientes y documentos esperáis al principio?</li></ul></div>
+    <div class="box"><ul class="ul"><li>¿Tenéis logo, colores y un dominio preferido? ¿Están confirmados los datos de la sociedad?</li><li>¿Qué costes asumiría el despacho y cuáles se repercutirían a los clientes?</li><li>¿Queréis dejar la app de tienda para más adelante?</li></ul></div>
+  </div>
+  <div class="box" style="margin-top:5mm"><p><b>Presupuesto:</b> no incluimos cifras en este documento. Se concretan cuando estén decididos el alcance, la identidad y la forma de trabajar la facturación. El portal base, la adaptación a vuestra marca y cualquier integración o app se detallan por separado. Dominio, hosting y mensajería de pago, si se usan, son costes aparte.</p></div>
+  <div class="cta" style="margin-top:6mm">
+    <div><h3 style="font-size:17px;color:#fff">¿Lo vemos juntos?</h3><p style="color:#cfcfcf;margin-top:1.5mm">Respóndenos por escrito y preparamos una sesión para recorrer la demo contigo.</p><p style="margin-top:3mm;font-size:10.5px;color:#a8a8a8">Alejandro · Agencia Dazenty · 624 90 32 56 · designerazenty@gmail.com · @dazen.ty</p></div>
+    <div style="text-align:center"><img src="../img/dazenty-blanco.png" alt="Dazenty" style="height:18mm;display:block;margin:0 auto 3mm"><span class="pillbtn">dazenty.com</span></div>
+  </div>
+  <div class="foot"><span>Agencia Dazenty · dazenty.com</span><span>10</span></div>
+</section>
+</body>
+</html>
