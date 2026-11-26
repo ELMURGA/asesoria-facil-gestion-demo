@@ -19,4 +19,4 @@ Entrada tipo app, área de cliente (inicio, subir facturas, mis impuestos, docum
 Autenticación/roles, aislamiento entre clientes, subida de archivos (solo metadatos), invitaciones, avisos por correo/WhatsApp/SMS, descargas (texto ficticio), formulario de consulta, servicio de facturación (estados cambiados a mano), registro de actividad.
 
 ## Pendiente de decidir
-Identidad (logo, colores, dominio), datos legales, servicios incluidos, herramienta de facturación y quién emite, costes y reparto, hosting/backend, canal de avisos, política de datos. Ver ESTIMACION-Y-DECISIONES.md.
+Identidad (logo, colores, dominio), datos legales, servicios incluidos, herramienta de facturación y quién emite, costes y reparto, hosting/backend, canal de avisos, política de datos.

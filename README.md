@@ -40,8 +40,6 @@ Sin dependencias ni build.
 ## Documentos
 - `docs/INVENTARIO.md` reutilizable / nuevo / simulado / pendiente de decidir
 - `docs/FUNCIONES-Y-LIMITES.md` qué funciona de verdad y qué no
-- `docs/NOTA-TECNICA-VERIFACTU.md` opciones por estudiar (sin elegir)
 - `docs/PRODUCCION.md` requisitos para producción (no implementados)
-- `docs/ESTIMACION-Y-DECISIONES.md` partidas sin cifras y decisiones necesarias
 - `docs/VERIFICACION.md` pruebas y limitaciones
 - `PRODUCT.md` supuestos de producto y marca
